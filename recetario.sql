@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2023 a las 00:40:11
+-- Tiempo de generación: 25-09-2023 a las 23:38:49
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -66,7 +66,13 @@ CREATE TABLE `platos` (
 --
 
 INSERT INTO `platos` (`plato_id`, `categoria_id`, `nombre_plato`, `ingredientes`, `tiempo_coccion`, `origen`, `precio`, `foto`) VALUES
-(1, 2, 'panqueques', '1 platano - 2 huevos - sal - canela - aceite veget', '2', 'argentina', 800, NULL);
+(1, 2, 'panqueques', '1 platano - 2 huevos - sal - canela - aceite veget', '2', 'argentina', 800, NULL),
+(2, 3, 'tarta de nubes ', '200 gramos  de galletita oreo trituradas - 80 gram', '30 minutos', 'argentina', 1500, NULL),
+(3, 4, 'pimientos del piquillo con queso', '9 pimientos del piquillo - 8 quesitos - 1/2 ceboll', '50 minutos', 'mexicano', 800, NULL),
+(4, 2, 'flan de queso', '750 ml de leche - 8 quesitos - 2 sobres de cuajada', '30 minutos', 'frances', 1500, NULL),
+(6, 1, 'pechugas de pollos con leche', '1 klg de pechuga de pollo - ajo - nuez moscada - p', '1 hora', 'argentina', 2500, NULL),
+(8, 2, 'tarta de nubes ', '200 gramos  de galletita oreo trituradas - 80 gram', '30 minutos', 'argentina', 3000, NULL),
+(10, 4, 'aguacate con langostino', '15 langostinos cocidos - 4 pelados - 2 aguacates -', '1 hora y 30 minutos', 'mexicano', 4000, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -83,7 +89,23 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `platos`
   ADD PRIMARY KEY (`plato_id`),
-  ADD UNIQUE KEY `categoria_id` (`categoria_id`);
+  ADD KEY `platos_ibfk_1` (`categoria_id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `platos`
+--
+ALTER TABLE `platos`
+  MODIFY `plato_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
