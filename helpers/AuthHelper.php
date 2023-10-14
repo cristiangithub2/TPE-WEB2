@@ -8,7 +8,7 @@ class AuthHelper
     {
     }
 
-    function restrictLoggedIn()
+    function restringirLoggedIn()
     {
         session_start();
         if (!isset($_SESSION["user"])) {
