@@ -1,6 +1,6 @@
 <?php
     require_once "view/GeneralView.php";
-    //require_once "helpers/AuthHelper.php";
+    require_once "helpers/AuthHelper.php";
     
     
 
@@ -11,7 +11,7 @@
         function __construct()
         {
             $this ->view=new GeneralView();
-          //  $this ->authHelper=new AuthHelper();
+            $this ->authHelper=new AuthHelper();
         }
 
         function showHome(){

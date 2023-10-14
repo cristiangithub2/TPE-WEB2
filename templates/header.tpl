@@ -8,14 +8,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de aromas</title>
+    <title>Recetario</title>
 </head>
 <body>
 <div class="container-fluid">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     <div class="container-fluid">
-        <h1>Tienda de aromas</h1>
+        <h1>Recetario</h1>
         <div class="d-flex justify-content-end">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">

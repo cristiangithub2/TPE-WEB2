@@ -7,7 +7,7 @@
     class PlatosController{
         private $view;
         private $model;
-       // private $helpers;
+        private $helpers;
         private $modelCategoria;
 
 
@@ -16,7 +16,7 @@
         {
             $this->view= new PlatosView();
             $this->model= new PlatosModel();
-            //s$this->helpers= new AuthHelper();
+            $this->helpers= new AuthHelper();
             $this->modelCategoria= new CategoriasModel();
         }
 
