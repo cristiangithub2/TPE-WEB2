@@ -7,7 +7,7 @@
     class PlatosController{
         private $view;
         private $model;
-        private $helpers;
+        private $authHelper;
         private $modelCategoria;
 
 
@@ -16,21 +16,22 @@
         {
             $this->view= new PlatosView();
             $this->model= new PlatosModel();
-            $this->helpers= new AuthHelper();
+            $this->authHelper= new AuthHelper();
             $this->modelCategoria= new CategoriasModel();
         }
 
 
         function mostrarPlatos(){
-            $platos=$this->model->traerPlatos();
-            $categorias=$this->modelCategoria->traerCategorias();
-            $this->view->cargarPlatos($platos,$categorias);
+            $logged = $this->authHelper->checkLoggedIn();
+            $platos=$this->model->traerPlatosDeDB();
+            $categorias=$this->modelCategoria->traerCategoriasDeDB();
+            $this->view->cargarPlatos($logged,$platos,$categorias);
         }
 
         function mostrarPlato($id)
         {
             $logged = $this->authHelper->checkLoggedIn();
-            $plato = $this->model->getPlato($id);
+            $plato = $this->model->traerPlato($id);
             $this->view->cargarPlato($logged,$plato);
         }
 
@@ -62,8 +63,8 @@
         $precio = $_POST['precio'];
         $categoria = $_POST['id_categoria'];
         $foto = $_POST['foto'];
-        $this->model->editItemDB($nombre, $ingredientes, $coccion, $origen, $precio, $categoria, $id,$foto);
-        $this->view->redirectList();
+        $this->model->editarPlatoDB($nombre, $ingredientes, $coccion, $origen, $precio, $categoria, $id,$foto);
+        $this->view->redirigirLista();
     }
 
     function borrarPlato($id)

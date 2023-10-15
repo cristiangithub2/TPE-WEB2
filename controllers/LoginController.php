@@ -20,20 +20,20 @@ class LoginController
     function login()
     {
         $logged = $this->authHelper->checkLoggedIn();
-        $this->view->showFormLogin($logged);
+        $this->view->mostrarFormularioLogin($logged);
     }
 
 
-    function validateUsuario(){
+    function validarUsuario(){
         $userEmail = $_POST['email'];
         $passwordForm = $_POST['password'];
-        $user = $this->model->getUsuarioEmail($userEmail);
+        $user = $this->model->traerUsuarioDeEmail($userEmail);
         if ($user && password_verify($passwordForm, ($user->password))){
             session_start();
             $_SESSION["user"] = $user;
-            $this->view->redirectHome();        
+            $this->view->redirigirHome();        
         } else {
-            $this->view->showFormLogin(null, "Acceso Denegado");
+            $this->view->mostrarFormularioLogin(null, "Acceso Denegado");
         }
     }
 
@@ -41,7 +41,7 @@ class LoginController
     {
         session_start();
         session_destroy();
-        $this->view->redirectHome();
+        $this->view->redirigirHome();
     }   
 
 }

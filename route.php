@@ -1,5 +1,5 @@
 <?php
-require_once "controllers/CategoriaController.php";
+require_once "controllers/CategoriasController.php";
 require_once "controllers/GeneralController.php";
 require_once "controllers/LoginController.php";
 require_once "controllers/PlatosController.php";
@@ -14,27 +14,27 @@ if (!empty($_GET['action'])) {
 
 $params = explode('/', $action);
 $GeneralController = new GeneralController();
-//$CategoriaController= new CategoriaController();
+$CategoriasController= new CategoriasController();
 $PlatosController= new PlatosController();
-//$LoginController= new LoginController();
+$LoginController= new LoginController();
 
     
 
 switch ($params[0]) {
     case 'index':
-        $GeneralController->showHome();
+        $GeneralController->mostrarHome();
         break;
     case 'platos':
-        $PlatosController->showPlatos();
+        $PlatosController->mostrarPlatos();
         break;
     case 'categorias':
-        $CategoriesController->showCategories();
+        $CategoriasController->mostrarCategorias();
         break;
-    case 'item':
-        $ItemsController->showItem($params[1]);
+    case 'item':        
+        $PlatosController->mostrarPlato($params[1]);
         break;
     case 'showItemsInCat':
-        $CategoriesController->showItemsInCat($params[1]);
+        $CategoriasController->mostrarPlatosEnCat($params[1]);
         break;
     case 'login':
         $LoginController->login();
@@ -43,25 +43,25 @@ switch ($params[0]) {
         $LoginController->logout();
         break;
     case 'validate':
-        $LoginController->validateUser();
+        $LoginController->validarUsuario();
         break;
     case 'addCategory':
-        $CategoriesController -> addCategory();
+        $CategoriasController -> agregarCategoria();
         break;
     case 'editCategory':
-        $CategoriesController -> editCategory($params[1]);
+        $CategoriasController -> editarCategoria($params[1]);
         break;
     case 'deleteCategory':
-        $CategoriesController -> deleteCategory($params[1]);
+        $CategoriasController -> borrarCategoria($params[1]);
         break;
     case 'addItem':
-        $ItemsController -> addItem();
+        $PlatosController -> agregarPlato();
         break;
     case 'editItem':
-        $ItemsController -> editItem();
+        $PlatosController -> editarPlato();
         break;
     case 'deleteItem':
-        $ItemsController -> deleteItem($params[1]);
+        $PlatosController -> borrarPlato($params[1]);
         break;
     
 }

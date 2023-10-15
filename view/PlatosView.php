@@ -9,10 +9,23 @@
           $this->smarty=new Smarty();
       }
 
-      function cargarPlatos($platos,$categorias){
+      function cargarPlatos($logged,$platos,$categorias){
         $this->smarty->assign('titulo','Lista de platos');
+        $this->smarty->assign('logged', $logged); 
         $this->smarty->assign('platos',$platos);
         $this->smarty->assign('categorias',$categorias);
-        $this->smarty->display('templates/platosLista.tpl');
+        $this->smarty->display('templates/platosLista.tpl');  
       }
-    }
+
+      function cargarPlato($logged,$plato)
+      {
+          $this->smarty->assign('plato', $plato);
+          $this->smarty->assign('logged',$logged);
+          $this->smarty->display('./templates/plato.tpl');
+      }
+      function redirigirLista()
+      {
+          header("Location: " . BASE_URL . "productos");
+      }
+    
+}

@@ -14,8 +14,9 @@
             $this ->authHelper=new AuthHelper();
         }
 
-        function showHome(){
-            $this->view->renderHome();
+        function mostrarHome(){
+            $logged  = $this->authHelper->checkLoggedIn();
+            $this->view->renderHome($logged);
         }
     }
 

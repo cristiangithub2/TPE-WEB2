@@ -24,7 +24,7 @@ class CategoriasController
 
     }
 
-    function mostrarCategories()
+    function mostrarCategorias()
     {
         $logged = $this->authHelper->checkLoggedIn();
         $categorias= $this->modelC->traerCategoriasDeDB();
@@ -37,7 +37,7 @@ class CategoriasController
         $logged = $this->authHelper->checkLoggedIn();
         $platos = $this->modelP->traerPlatosDeCategoria($id);
         $categoria = $this->modelC->traerCategoriaDePlato($id);
-        $this->view->renderItemsByCategory($logged,$platos, $categoria);
+        $this->view->cargarPlatosDeCategoria($logged,$platos, $categoria);
     }
 
     function agregarCategoria()
@@ -46,7 +46,7 @@ class CategoriasController
         $nombre = $_POST['nombre'];
         $descripcion = $_POST['descripcion'];
         $this->modelC->insertarCategoriaEnDB($nombre, $descripcion);
-        $this->view->rediregirList();
+        $this->view->redirigirLista();
     }
 
     function editarCategoria($id)
@@ -62,6 +62,6 @@ class CategoriasController
     {
         $this->authHelper-> restringirLoggedIn();
         $this->modelC->borrarCategoriaDeDB($id);
-        $this->view->redirectList();
+        $this->view->redirigirLista();
     }
 }

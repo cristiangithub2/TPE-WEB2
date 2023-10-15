@@ -8,7 +8,9 @@
         
             <h4>$ {$plato->precio}</h4>
 
-            <button type="button">Categoria:{$categorias->{$plato->categoria_id}->$categoria} </button>
+            {if isset($categorias[$plato->categoria_id])}
+                <button type="button">Categoria: {$categorias[$plato->categoria_id]->categoria}</button>
+            {/if}
             {if $logged}
                 <button type="button" class="btn btn-outline-danger"> <a
                     href="deleteItem/{$producto->id_item}">Borrar</a></button>
