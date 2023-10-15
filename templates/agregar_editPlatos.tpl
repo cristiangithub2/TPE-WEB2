@@ -7,17 +7,17 @@
                         <input type="text" name="nombre_plato" placeholder="Inserte nombre" required>
                     </div>
                     <div class="mb-3">
-                        <input type="text" name="ingredientes" placeholder="Inserte marca" required>
+                        <input type="text" name="ingredientes" placeholder="Inserte ingredientes" required>
                     </div>
                     <div class="mb-3">
-                        <input type="text" name="tiempo_coccion" placeholder="Inserte descripcion" required>
+                        <input type="text" name="tiempo_coccion" placeholder="Inserte tiempo de coccion" required>
                     </div>
                     <div class="mb-3">
-                        <input type="text" name="origen" placeholder="Inserte contenido en mililitros" required>
+                        <input type="text" name="origen" placeholder="Inserte lugar de origen" required>
                     </div>
                     <div class="mb-3">
                         <input type="number" name="precio" placeholder="Inserte precio" required>
-                    </div>
+                    </div>  
                     <div class="mb-3">
                         <select name="categoria_id" class="form-select">
                             {foreach from=$categorias item=$categoria}
@@ -30,11 +30,11 @@
         </div>
         <div class="p-2 bd-highlight">
             <h3>Editar Item</h3>
-                <form action="editItem" method="POST">
+                <form action="editarPlato" method="POST">
                     <div class="mb-3">
-                        <select name="id_item" class="form-select">
-                            {foreach from=$items item=$item}
-                                <option value="{$item->id_item}">{$item->id_item}-{$item->nombre}</option>
+                        <select name="plato_id" class="form-select">
+                            {foreach from=$platos item=$plato}
+                                <option value="{$plato->id_item}">{$plato->plato_id}-{$plato->nombre_plato}</option>
                             {/foreach}
                         </select>
                     </div>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="mb-3">
                         <select name="categoria_id" class="form-select">
-                            {foreach from=$categorias item=$category}
+                            {foreach from=$categorias item=$categoria}
                                 <option value="{$categoria->categoria_id}">{$categoria->categoria_id}-{$categoria->categoria}</option>
                             {/foreach}
                         </select>

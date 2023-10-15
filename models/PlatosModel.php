@@ -27,6 +27,7 @@ class PlatosModel
         return $plato;
     }
 
+    
     function traerPlatosDeCategoria($id)
     {
         $sentencia = $this->db->prepare("SELECT * FROM platos WHERE categoria_id = ?");
@@ -37,7 +38,7 @@ class PlatosModel
 
     function insertarPlatoEnDB($nombre_plato,$ingredientes, $tiempo_coccion, $origen, $precio, $categoria)
     {
-        $sentencia = $this->db->prepare("INSERT INTO platos (nombre_plato, ingredientes,tiempo_coccion,origen,precio,categoria) VALUES (?, ?, ?, ?, ?,?)");
+        $sentencia = $this->db->prepare("INSERT INTO platos (nombre_plato, ingredientes, tiempo_coccion, origen, precio, categoria_id) VALUES (?, ?, ?, ?, ?, ?)");
         $sentencia->execute(array($nombre_plato, $ingredientes, $tiempo_coccion, $origen, $precio, $categoria));
     }
 
@@ -50,7 +51,7 @@ class PlatosModel
 
     function editarPlatoDB($nombre_plato,$ingredientes, $tiempo_coccion, $origen, $precio, $categoria, $id)
     {
-        $sentencia = $this->db->prepare("UPDATE platos SET nombre_plato=?, ingredientes=?, tiempo_coccion=? , origen=?, precio=?,categoria=? WHERE plato_id=?");
+        $sentencia = $this->db->prepare("UPDATE platos SET nombre_plato=?, ingredientes=?, tiempo_coccion=? , origen=?, precio=?,categoria_id=? WHERE plato_id=?");
         $sentencia->execute(array($nombre_plato, $ingredientes, $tiempo_coccion, $origen, $precio, $categoria, $id));
     }
 }

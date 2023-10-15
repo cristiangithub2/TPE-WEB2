@@ -33,7 +33,7 @@ switch ($params[0]) {
     case 'plato':        
         $PlatosController->mostrarPlato($params[1]);
         break;
-    case 'mostrarPlaosEnCateg':
+    case 'mostrarPlatosEnCat':
         $CategoriasController->mostrarPlatosEnCat($params[1]);
         break;
     case 'login':

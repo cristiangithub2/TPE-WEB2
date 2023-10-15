@@ -12,6 +12,6 @@
     {/foreach}
 </div>
     {if $logged}
-        {include file="templates/add_editForCategories.tpl    //***falta crearloooooo"} 
+        {include file="templates/agregar_editCategoria.tpl"} 
     {/if}
 {include file="./footer.tpl"}

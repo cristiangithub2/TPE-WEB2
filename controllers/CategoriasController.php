@@ -36,8 +36,7 @@ class CategoriasController
     {
         $logged = $this->authHelper->checkLoggedIn();
         $platos = $this->modelP->traerPlatosDeCategoria($id);
-        $categoria = $this->modelC->traerCategoriaDePlato($id);
-        $this->view->cargarPlatosDeCategoria($logged,$platos, $categoria);
+        $this->view->cargarPlatosDeCategoria($logged,$platos,$id);
     }
 
     function agregarCategoria()

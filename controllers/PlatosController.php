@@ -37,18 +37,17 @@
         }
 
 
-
+ 
         function agregarPlato()
     {
         $this->authHelper-> restringirLoggedIn();
-        $nombre_plato = $_POST['nombre'];
-        $ingredientes = $_POST['ingrediente'];
-        $tiempo_coccion = $_POST['tiempo de coccion'];  
+        $nombre_plato = $_POST['nombre_plato'];
+        $ingredientes = $_POST['ingredientes'];
+        $tiempo_coccion = $_POST['tiempo_coccion'];  
         $origen = $_POST['origen'];
         $precio = $_POST['precio'];
-        $categoria = $_POST['id_categoria'];
-        $foto = $_POST['foto'];
-        $this->model->insertarPLatoEnDB($nombre_plato, $ingredientes, $tiempo_coccion, $origen, $precio, $categoria,$foto);
+        $categoria = $_POST['categoria_id'];
+        $this->model->insertarPLatoEnDB($nombre_plato, $ingredientes, $tiempo_coccion, $origen, $precio, $categoria);
         $this->view->redirigirLista();
     }
 
@@ -57,14 +56,13 @@
     {
         $this->authHelper-> restringirLoggedIn();
         $id= $_POST['plato_id'];
-        $nombre_plato = $_POST['nombre'];
+        $nombre_plato = $_POST['nombre_plato'];
         $ingredientes = $_POST['ingredientes'];
-        $tiempo_coccion = $_POST['tiempo de coccion'];
+        $tiempo_coccion = $_POST['tiempo_coccion'];
         $origen = $_POST['origen'];
         $precio = $_POST['precio'];
-        $categoria = $_POST['id_categoria'];
-        $foto = $_POST['foto'];
-        $this->model->editarPlatoDB($nombre_plato, $ingredientes, $tiempo_coccion, $origen, $precio, $categoria, $id,$foto);
+        $categoria = $_POST['categoria_id'];
+        $this->model->editarPlatoDB($nombre_plato, $ingredientes, $tiempo_coccion, $origen, $precio, $categoria, $id);
         $this->view->redirigirLista();
     }
 

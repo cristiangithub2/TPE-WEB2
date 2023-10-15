@@ -17,7 +17,7 @@ class LoginView
         $this->smarty->assign('titulo', 'Log In');
         $this->smarty->assign('logged', $logged);
         $this->smarty->assign('error', $error);
-        $this->smarty->display('templates/login.tpl'); //tengo que crear el template login.tpl
+        $this->smarty->display('templates/login.tpl'); 
     }
 
     function redirigirHome()

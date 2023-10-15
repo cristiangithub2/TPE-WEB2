@@ -26,7 +26,7 @@
       }
       function redirigirLista()
       {
-          header("Location: " . BASE_URL . "productos");
+          header("Location: " . BASE_URL . "platos");
       }
     
 }
