@@ -30,10 +30,10 @@ switch ($params[0]) {
     case 'categorias':
         $CategoriasController->mostrarCategorias();
         break;
-    case 'item':        
+    case 'plato':        
         $PlatosController->mostrarPlato($params[1]);
         break;
-    case 'showItemsInCat':
+    case 'mostrarPlaosEnCateg':
         $CategoriasController->mostrarPlatosEnCat($params[1]);
         break;
     case 'login':
@@ -42,25 +42,25 @@ switch ($params[0]) {
     case 'logout':
         $LoginController->logout();
         break;
-    case 'validate':
+    case 'validar':
         $LoginController->validarUsuario();
         break;
-    case 'addCategory':
+    case 'agregarCategoria':
         $CategoriasController -> agregarCategoria();
         break;
-    case 'editCategory':
+    case 'editarCategoria':
         $CategoriasController -> editarCategoria($params[1]);
         break;
-    case 'deleteCategory':
+    case 'borrarCategoria':
         $CategoriasController -> borrarCategoria($params[1]);
         break;
-    case 'addItem':
+    case 'agregarPlato': 
         $PlatosController -> agregarPlato();
         break;
-    case 'editItem':
+    case 'editarPlato':
         $PlatosController -> editarPlato();
         break;
-    case 'deleteItem':
+    case 'borrarPlato':
         $PlatosController -> borrarPlato($params[1]);
         break;
     

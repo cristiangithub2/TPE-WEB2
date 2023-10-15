@@ -26,15 +26,15 @@ class CategoriasModel{
         $categoria = $sentencia->fetch(PDO::FETCH_OBJ);
         return $categoria;
     }
-    function insertarCategoriaEnDB($nombre, $descripcion)
+    function insertarCategoriaEnDB($categoria, $descripcion)
     {
-        $sentencia = $this->db->prepare("INSERT INTO categoria (nombre,descripcion) VALUES (?, ?)");
-        $sentencia->execute(array($nombre, $descripcion));
+        $sentencia = $this->db->prepare("INSERT INTO categoria (categoria,descripcion) VALUES (?, ?)");
+        $sentencia->execute(array($categoria, $descripcion));
     }
-    function editarCategoriaDB($id, $nombre, $descripcion)
+    function editarCategoriaDB($id, $categoria, $descripcion)
     {
-        $sentencia = $this->db->prepare("UPDATE categoria SET nombre=?, descripcion=? WHERE id_categoria=?");
-        $sentencia->execute(array($nombre, $descripcion, $id));
+        $sentencia = $this->db->prepare("UPDATE categoria SET categoria=?, descripcion=? WHERE categoria_id=?");
+        $sentencia->execute(array($categoria, $descripcion, $id));
     }
     function borrarCategoriaDeDB($id)
     {

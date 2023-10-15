@@ -1,10 +1,12 @@
-{include file="/template/header.tpl" }
+{include file='./header.tpl'}
 
-<h1 class="text-center"> {$platos->nombre_plato} </h1>
-<h2 class="text-center"> {$platos->ingredientes} </h2>
-<p class="text-center lead"> {$platos->coccion}</p>
-<p class="text-center"> {$platos->origen}</p>
-<p class="text-center lead"> Categoria: {$plato->categoria}</p>
-<h3 class="text-center">{$platos->precio}</h3>
+<h1 class="text-center"> {$plato->nombre_plato} </h1>
+<h2 class="text-center"> {$plato->ingredientes} </h2>
+<p class="text-center lead"> {$plato->tiempo_coccion}</p>
+<p class="text-center"> {$plato->origen}</p>
+{if isset($categorias) && isset($categorias[$plato->categoria_id])}
+    <p class="text-center lead"> Categoria: {$categorias[$plato->categoria_id]->categoria}</p>
+{/if}
+<h3 class="text-center">${$plato->precio}</h3>
 
-{include file="/template/footer.tpl" }
+{include file='./footer.tpl'}

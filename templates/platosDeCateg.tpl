@@ -1,13 +1,13 @@
 
-{include file='/templates/header.tpl'}
+{include file='./header.tpl'}
 
 
 <div>
-    <h2 class="text-center">{$categoria->categoria}</h2>
-        {foreach from=$items item=$producto}
-            <li><button type="button">{$producto->nombre}</button>  {$producto->marca}  ${$producto->precio}</li>
+     <h2 class="text-center">{$categoria->categoria}</h2>
+        {foreach from=$platos item=$producto}
+            <li><button type="button">{$producto->nombre_plato}</button>  {$producto->ingredientes}  ${$producto->precio}</li>
         {/foreach}
 </div>
 
 
-{include file='/templates/footer.tpl'}
+{include file='./footer.tpl'}

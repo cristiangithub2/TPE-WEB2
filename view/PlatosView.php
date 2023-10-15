@@ -17,10 +17,11 @@
         $this->smarty->display('templates/platosLista.tpl');  
       }
 
-      function cargarPlato($logged,$plato)
+      function cargarPlato($logged,$plato,$categorias)
       {
           $this->smarty->assign('plato', $plato);
           $this->smarty->assign('logged',$logged);
+          $this->smarty->assign('logged',$categorias);
           $this->smarty->display('./templates/plato.tpl');
       }
       function redirigirLista()

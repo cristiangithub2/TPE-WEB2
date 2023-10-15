@@ -43,19 +43,19 @@ class CategoriasController
     function agregarCategoria()
     {
         $this->authHelper-> restringirLoggedIn();
-        $nombre = $_POST['nombre'];
+        $categoria = $_POST['categoria'];
         $descripcion = $_POST['descripcion'];
-        $this->modelC->insertarCategoriaEnDB($nombre, $descripcion);
+        $this->modelC->insertarCategoriaEnDB($categoria, $descripcion);
         $this->view->redirigirLista();
     }
 
     function editarCategoria($id)
     {
         $this->authHelper-> restringirLoggedIn();
-        $id = $_POST['id_categoria'];
-        $nombre = $_POST['nombre'];
+        $id = $_POST['categoria_id'];
+        $categoria = $_POST['categoria'];
         $descripcion = $_POST['descripcion'];
-        $this->modelC->editarCategoriaDB($id, $nombre, $descripcion);
+        $this->modelC->editarCategoriaDB($id, $categoria, $descripcion);
         $this->view->redirigirLista();
     }
     function borrarCategoria($id)

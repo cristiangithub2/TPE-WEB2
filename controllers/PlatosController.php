@@ -32,7 +32,8 @@
         {
             $logged = $this->authHelper->checkLoggedIn();
             $plato = $this->model->traerPlato($id);
-            $this->view->cargarPlato($logged,$plato);
+            $categorias= $this->modelCategoria-> traerCategoriasDeDB();
+            $this->view->cargarPlato($logged,$plato,$categorias);
         }
 
 
@@ -40,14 +41,14 @@
         function agregarPlato()
     {
         $this->authHelper-> restringirLoggedIn();
-        $nombre = $_POST['nombre'];
+        $nombre_plato = $_POST['nombre'];
         $ingredientes = $_POST['ingrediente'];
-        $coccion = $_POST['tiempo de coccion'];  
+        $tiempo_coccion = $_POST['tiempo de coccion'];  
         $origen = $_POST['origen'];
         $precio = $_POST['precio'];
         $categoria = $_POST['id_categoria'];
         $foto = $_POST['foto'];
-        $this->model->insertarPLatoEnDB($nombre, $ingredientes, $coccion, $origen, $precio, $categoria,$foto);
+        $this->model->insertarPLatoEnDB($nombre_plato, $ingredientes, $tiempo_coccion, $origen, $precio, $categoria,$foto);
         $this->view->redirigirLista();
     }
 
@@ -56,14 +57,14 @@
     {
         $this->authHelper-> restringirLoggedIn();
         $id= $_POST['plato_id'];
-        $nombre = $_POST['nombre'];
+        $nombre_plato = $_POST['nombre'];
         $ingredientes = $_POST['ingredientes'];
-        $coccion = $_POST['tiempo de coccion'];
+        $tiempo_coccion = $_POST['tiempo de coccion'];
         $origen = $_POST['origen'];
         $precio = $_POST['precio'];
         $categoria = $_POST['id_categoria'];
         $foto = $_POST['foto'];
-        $this->model->editarPlatoDB($nombre, $ingredientes, $coccion, $origen, $precio, $categoria, $id,$foto);
+        $this->model->editarPlatoDB($nombre_plato, $ingredientes, $tiempo_coccion, $origen, $precio, $categoria, $id,$foto);
         $this->view->redirigirLista();
     }
 

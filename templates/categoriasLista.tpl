@@ -1,4 +1,4 @@
-{include file="templates/header.tpl"}
+{include file="./header.tpl"}
 <div>
     <h3>~~Lista de categorias</h3>
     <p>Clickee sobre la categoria deseada para inspeccionarla</p>
@@ -14,4 +14,4 @@
     {if $logged}
         {include file="templates/add_editForCategories.tpl    //***falta crearloooooo"} 
     {/if}
-{include file="templates/footer.tpl"}
+{include file="./footer.tpl"}

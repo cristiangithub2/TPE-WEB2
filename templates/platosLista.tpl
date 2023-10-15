@@ -1,4 +1,4 @@
-{include file="templates/header.tpl"}
+{include file="./header.tpl"}
 
 <div>
     {foreach from=$platos item=plato}
@@ -13,10 +13,10 @@
             {/if}
             {if $logged}
                 <button type="button" class="btn btn-outline-danger"> <a
-                    href="deleteItem/{$producto->id_item}">Borrar</a></button>
+                    href="borrarPlato/{$producto->plato_id}">Borrar</a></button>
             {/if}
         </div>
         
     {/foreach}
 
-{include file="templates/footer.tpl"}
+{include file="./footer.tpl"}
