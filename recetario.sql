@@ -97,7 +97,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_user`, `email`, `nombre`, `password`) VALUES
-(2, 'webAdmin@gmail.com', 'webAdmin', '21232f297a57a5a743894a0e4a801fc3');
+(2, 'webAdmin@gmail.com', 'webAdmin', '$2y$10$qQxQ.6y7vUBfx8.5xn5QTekbO8HVMsDBxx4i6PWUkQ704G5hh53zy'),
+(3, 'probar', 'papa', '$2y$12$vcP6PqTDVHRswJcqzpIpwu5LEbs3TT8hO6ZzppzPQIuXOgcBlW5Ta');
+
+--
 
 --
 -- Índices para tablas volcadas

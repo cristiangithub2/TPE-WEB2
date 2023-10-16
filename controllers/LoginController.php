@@ -29,7 +29,7 @@ class LoginController
         $passwordForm = $_POST['password'];
         $user = $this->model->traerUsuarioDeEmail($userEmail);
 
-        if ($user ){
+        if ($user && password_verify($passwordForm, ($user->password))){
             session_start();
             $_SESSION["user"] = $user;
             $this->view->redirigirHome();        
