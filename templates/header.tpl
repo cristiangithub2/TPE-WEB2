@@ -21,7 +21,7 @@
                 <ul class="navbar-nav">
                     <div class="p-2 bd-highlight">
                         <li class="nav-item">
-                            <a class="nav-link" href="index">Inicio</a>
+                            <a class="nav-link " href="index">Inicio</a>
                         </li>
                     </div>
                     <div class="p-2 bd-highlight">

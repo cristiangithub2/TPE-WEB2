@@ -22,12 +22,12 @@ class CategoriasView
     
     }
 
-    function cargarPlatosDeCategoria($logged,$platos,$id)
+    function cargarPlatosDeCategoria($logged,$platos,$categoria)
     {
         $this->smarty->assign('titulo', "Lista de productos en esta categoria: ");
-        $this->smarty->assign('logged', $logged);
-        $this->smarty->assign('categoria', $id);  
+        $this->smarty->assign('logged', $logged);  
         $this->smarty->assign('platos', $platos);
+        $this->smarty->assign('categoria', $categoria);
         $this->smarty->display('templates/platosDeCateg.tpl');
     }
     function redirigirLista()

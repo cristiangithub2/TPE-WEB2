@@ -35,8 +35,9 @@ class CategoriasController
     function mostrarPlatosEnCat($id)
     {
         $logged = $this->authHelper->checkLoggedIn();
+        $categoria=$this->modelC->traerCategoria($id);
         $platos = $this->modelP->traerPlatosDeCategoria($id);
-        $this->view->cargarPlatosDeCategoria($logged,$platos,$id);
+        $this->view->cargarPlatosDeCategoria($logged,$platos,$categoria );
     }
 
     function agregarCategoria()

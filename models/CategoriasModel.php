@@ -18,6 +18,12 @@ class CategoriasModel{
         $categorias=$sentencia->fetchAll(PDO::FETCH_OBJ);
         return  $categorias;
     }
+    function traerCategoria($id){
+        $sentencia = $this->db->prepare("SELECT * FROM categoria WHERE categoria_id= ?");
+        $sentencia->execute(array($id));
+        $categoria= $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $categoria;
+    }
 
     function traerCategoriaDePlato($id)
     {

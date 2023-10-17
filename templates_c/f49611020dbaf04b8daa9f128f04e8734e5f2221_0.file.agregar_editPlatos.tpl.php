@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-16 22:58:09
+/* Smarty version 3.1.39, created on 2023-10-17 01:50:51
   from 'C:\xampp\htdocs\tpWeb2\templates\agregar_editPlatos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_652da3e1d21582_62356446',
+  'unifunc' => 'content_652dcc5b3b74a5_46213159',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f49611020dbaf04b8daa9f128f04e8734e5f2221' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpWeb2\\templates\\agregar_editPlatos.tpl',
-      1 => 1697489117,
+      1 => 1697500238,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_652da3e1d21582_62356446 (Smarty_Internal_Template $_smarty_tpl) {
+function content_652dcc5b3b74a5_46213159 (Smarty_Internal_Template $_smarty_tpl) {
 ?></div>
     <div class="d-flex justify-content-evenly">
         <div class="p-2 bd-highlight">
@@ -62,7 +62,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </form>
         </div>
         <div class="p-2 bd-highlight">
-            <h3>Editar Item</h3>
+            <h3>Editar Plato</h3>
                 <form action="editarPlato" method="POST">
                     <div class="mb-3">
                         <select name="plato_id" class="form-select">
@@ -72,7 +72,7 @@ $_smarty_tpl->tpl_vars['plato']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['plato']->value) {
 $_smarty_tpl->tpl_vars['plato']->do_else = false;
 ?>
-                                <option value="<?php echo $_smarty_tpl->tpl_vars['plato']->value->id_item;?>
+                                <option value="<?php echo $_smarty_tpl->tpl_vars['plato']->value->plato_id;?>
 "><?php echo $_smarty_tpl->tpl_vars['plato']->value->plato_id;?>
 -<?php echo $_smarty_tpl->tpl_vars['plato']->value->nombre_plato;?>
 </option>

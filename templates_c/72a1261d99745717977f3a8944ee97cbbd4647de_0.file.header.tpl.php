@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2023-10-16 22:55:44
+/* Smarty version 3.1.39, created on 2023-10-17 02:11:48
   from 'C:\xampp\htdocs\tpWeb2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_652da3501cc612_33133361',
+  'unifunc' => 'content_652dd144100c27_35233923',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '72a1261d99745717977f3a8944ee97cbbd4647de' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpWeb2\\templates\\header.tpl',
-      1 => 1697489117,
+      1 => 1697501482,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_652da3501cc612_33133361 (Smarty_Internal_Template $_smarty_tpl) {
+function content_652dd144100c27_35233923 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +47,7 @@ function content_652da3501cc612_33133361 (Smarty_Internal_Template $_smarty_tpl)
                 <ul class="navbar-nav">
                     <div class="p-2 bd-highlight">
                         <li class="nav-item">
-                            <a class="nav-link" href="index">Inicio</a>
+                            <a class="nav-link " href="index">Inicio</a>
                         </li>
                     </div>
                     <div class="p-2 bd-highlight">

@@ -29,12 +29,12 @@
                 </form>
         </div>
         <div class="p-2 bd-highlight">
-            <h3>Editar Item</h3>
+            <h3>Editar Plato</h3>
                 <form action="editarPlato" method="POST">
                     <div class="mb-3">
                         <select name="plato_id" class="form-select">
                             {foreach from=$platos item=$plato}
-                                <option value="{$plato->id_item}">{$plato->plato_id}-{$plato->nombre_plato}</option>
+                                <option value="{$plato->plato_id}">{$plato->plato_id}-{$plato->nombre_plato}</option>
                             {/foreach}
                         </select>
                     </div>
